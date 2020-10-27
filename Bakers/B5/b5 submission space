@@ -1,7 +1,22 @@
-Baker Id: 1069
-Old Reward Account Address: 3zkEiVKWuoVfD4CCF1Aqr9G3SnKsT8RtgUA7L5cd3TV8ih3WNG 
-New Reward Account Address (Replaced): 4PaZ1sTy35qTh6L3HBo7nBm9vWJ8L7skbMgLySk6ij19arhXRX 
-Transaction ID of the transaction used to register as a baker: c1d7aa49bedff8966fcb7c29366b5bb59711c9664aa4a5293741bb2ab6123a02
-Blockhash of block produced: 6b27309f3f0d8440a673034b44be8ea643aeee93cedb1c6bfc0038b75ce7c
-Transaction ID of the transaction changing the reward account: 9efc89f72246b91a57668eafdb95413ba0314c16116c10874553a3b8841ab2db
-Transaction ID of the transaction updaring baker's keys: 8a58298d41c3b5fcdd10dee2ec7be8039b037c57c61036da7bcf6897500c9ccb
+Baker Id: 1116
+Old Reward Account Address: 3iRWCvUtUVgWoAHSbQcDbnLbBruUXcwsyYAjeKZj2QXxfNjWth 
+New Reward Account Address (Replaced): 3zkEiVKWuoVfD4CCF1Aqr9G3SnKsT8RtgUA7L5cd3TV8ih3WNG  
+Transaction ID of the transaction used to register as a baker: 3e26cf407d3a74c941795e340679b5ce036064d1ffef6ee19d74b8cff54a1e1c
+Blockhash of block produced: 176f5d3a2141457353830d1ba6c33688debd0dbebf2eaa09f012ff0670680f9a
+Transaction ID of the transaction changing the reward account: c93ed1410e27030a1aa3bb3337ce5dcad9def68451340fd60cd11ab54e93126a
+Transaction ID of the transaction updating baker's keys: 22d5b50d8ebb7531a97e19e27758a58575bbe710aacde0999cb59a88becf6630
+
+
+Steps:
+
+1) Rewarding account was updated (screenshot b5_1)
+./concordium-client baker set-account 1116 3zkEiVKWuoVfD4CCF1Aqr9G3SnKsT8RtgUA7L5cd3TV8ih3WNG --sender 3iRWCvUtUVgWoAHSbQcDbnLbBruUXcwsyYAjeKZj2QXxfNjWth
+
+2) Baker keys were generated and written to newfile.json (screenshot b5_2)
+
+./concordium-client baker generate-keys newfile.json
+
+3) With Winsp program content (generated keys) of newfile was copied to baker-credentials.json (the keys inside baker-credentials file was overwritten with new keys)  screenshot b5_3
+
+4) the baker's keys were set with the new keys by running "./concordium-client baker add baker-credentials.json --sender..." command (screenshot b5_4)
+./concordium-client baker add baker-credentials.json --sender 3iRWCvUtUVgWoAHSbQcDbnLbBruUXcwsyYAjeKZj2QXxfNjWth
