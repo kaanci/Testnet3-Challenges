@@ -1,1 +1,7 @@
 
+Node_ID: 05b82155f0e123c8
+Node IP: 188.166.72.203	
+
+Between 18.10.2020 and 24.10.2020 node had been restarted twice every day (total 7 days).  It was observed that after stoppind and then restarting the node operation covers quickly.
+
+Please find attached log files and node restarting schedule in excel file.
